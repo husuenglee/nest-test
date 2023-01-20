@@ -28,12 +28,22 @@ jobs:
         run: |
           ls ${{ github.workspace }}
 
-      - name: Deploy Prod use SCP
+      - name: Deploy Prod use SCP DIST
         uses: appleboy/scp-action@master
         with:
           username: ubuntu
           host: ${{secrets.SSH_KNOWN_HOSTS}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
-          source: "."
+          source: "./dist"
+          target: "/home/ubuntu/nest-test"
+          strip_components: 2
+
+      - name: Deploy Prod use SCP Ecosystem
+        uses: appleboy/scp-action@master
+        with:
+          username: ubuntu
+          host: ${{secrets.SSH_KNOWN_HOSTS}}
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          source: "./ecosystem.config.js"
           target: "/home/ubuntu/nest-test"
           strip_components: 2
