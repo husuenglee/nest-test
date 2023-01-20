@@ -27,3 +27,15 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+
+      - name: SSH 접속 구성
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/vcast_backend.pem
+          sudo chmod 600 ~/.ssh/vcast_backend.pem
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          cd ~/.ssh/ && ls -al
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
