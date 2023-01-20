@@ -43,4 +43,6 @@ jobs:
           username: ubuntu
           host: ${{secrets.SSH_KNOWN_HOSTS}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
-          script: pm2 restart ~/nest-test/ecosystem.config.js
+          script: |
+            export PATH="$PATH:/home/ubuntu/.nvm/versions/node/v18.13.0/bin"
+            pm2 reload ~/nest-test/ecosystem.config.js
