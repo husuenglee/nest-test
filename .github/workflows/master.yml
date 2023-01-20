@@ -34,6 +34,6 @@ jobs:
           username: ubuntu
           host: ${{secrets.SSH_KNOWN_HOSTS}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
-          source: "./dist"
+          source: "."
           target: "/home/ubuntu/nest-test"
           strip_components: 2
