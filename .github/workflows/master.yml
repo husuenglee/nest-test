@@ -34,5 +34,5 @@ jobs:
           username: ubuntu
           host: ${{secrets.SSH_KNOWN_HOSTS}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
-          source: "./dist,./ecosystem.config.js"
+          source: "./dist,./node_modules,./ecosystem.config.js"
           target: "/home/ubuntu/nest-test"
