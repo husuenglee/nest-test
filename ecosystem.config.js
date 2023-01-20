@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'loomex-live-manager',
+      name: 'nest-test',
       script: 'dist/main.js',
       instances: 4,
       exec_mode: 'cluster',
