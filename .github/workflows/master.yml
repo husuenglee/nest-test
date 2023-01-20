@@ -2,7 +2,7 @@ name: GitHub Actions Master Event
 run-name: ${{ github.actor }} is testing out GitHub Master Actions 🚀
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
