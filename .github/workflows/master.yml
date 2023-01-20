@@ -37,11 +37,12 @@ jobs:
           source: "./dist,./node_modules,./ecosystem.config.js"
           target: "/home/ubuntu/nest-test"
 
-      - name: Execute PM2 START
+      - name: Execute PM2 Reload
         uses: appleboy/ssh-action@master
         with:
           username: ubuntu
           host: ${{secrets.SSH_KNOWN_HOSTS}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
+            export PATH="$PATH:/home/ubuntu/.nvm/versions/node/v${{ matrix.node-version }}/bin"
             pm2 reload ~/nest-test/ecosystem.config.js
