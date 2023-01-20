@@ -22,7 +22,7 @@ jobs:
         run: npm i
 
       - name: NPM BUILD
-        run: npm start build
+        run: npm run build
 
       - name: List files in the repository
         run: |
