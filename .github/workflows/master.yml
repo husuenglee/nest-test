@@ -47,3 +47,4 @@ jobs:
             printenv PATH
             export PATH="$PATH:/home/ubuntu/.nvm/versions/node/v${{ matrix.node-version }}/bin"
             pm2 reload ~/nest-test/ecosystem.config.js
+            printenv PATH
