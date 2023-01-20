@@ -42,6 +42,6 @@ jobs:
         with:
           username: ubuntu
           host: ${{secrets.SSH_KNOWN_HOSTS}}
-          key: ${{secrets.SSH_PRIVATE_KEY}}인
+          key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
             pm2 reload ~/nest-test/ecosystem.config.js
