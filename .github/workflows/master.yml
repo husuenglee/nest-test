@@ -44,5 +44,6 @@ jobs:
           host: ${{secrets.SSH_KNOWN_HOSTS}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
+            printenv PATH
             export PATH="$PATH:/home/ubuntu/.nvm/versions/node/v${{ matrix.node-version }}/bin"
             pm2 reload ~/nest-test/ecosystem.config.js
